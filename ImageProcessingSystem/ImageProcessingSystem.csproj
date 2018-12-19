@@ -107,12 +107,6 @@
       <DependentUpon>FaceCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="facemodel.cs" />
-    <Compile Include="face_login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="face_login.Designer.cs">
-      <DependentUpon>face_login.cs</DependentUpon>
-    </Compile>
     <Compile Include="face_regist.cs">
       <SubType>Form</SubType>
     </Compile>

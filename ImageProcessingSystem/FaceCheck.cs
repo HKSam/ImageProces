@@ -43,14 +43,14 @@ namespace ImageProcessingSystem
             string path = AppDomain.CurrentDomain.BaseDirectory;
 
             //将图片保存在服务器里面
-            bitmap.Save(@"E:\a.jpg", ImageFormat.Jpeg);
+            bitmap.Save(path+"\\"+fileName, ImageFormat.Jpeg);
             //System.Drawing.Image img_s = new Bitmap(videoSourcePlayer1.Width, videoSourcePlayer1.Height);
             //videoSourcePlayer1.DrawToBitmap((Bitmap)img_s, new Rectangle(0, 0, videoSourcePlayer1.Width, videoSourcePlayer1.Height));
             //img_s.Save(@"E:\a.jpg", ImageFormat.Jpeg);
             bitmap.Dispose();
 
             //进行面部特征识别
-            facemodel facem = face_test.FaceDetect(@"E:\a.jpg");
+            facemodel facem = face_test.FaceDetect(path + "\\" + fileName);
             
             this.lb_age_message.Text = facem.age;      //年龄
             //this.label5.Text = facem.beauty;  //漂亮度
@@ -144,7 +144,11 @@ namespace ImageProcessingSystem
 
         private void btn_vd_Click(object sender, EventArgs e)
         {
-            openCan();
+            try
+            {
+                openCan();
+            }
+            catch { }
         }
 
         private void btn_save_Click(object sender, EventArgs e)
